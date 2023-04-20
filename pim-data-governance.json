@@ -1,0 +1,3035 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/api/pdatg/v1/product/create-new": {
+      "post": {
+        "operationId": "SkuController_createNew",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/create-new",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProductRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/image-upload": {
+      "post": {
+        "operationId": "SkuController_imageUpload",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/image-upload",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/copy-variant-images": {
+      "post": {
+        "operationId": "SkuController_copyVariantImages",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/copy-variant-images",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/variant-image-upload": {
+      "post": {
+        "operationId": "SkuController_variantImageUpload",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/variant-image-upload",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/delete-image": {
+      "post": {
+        "operationId": "SkuController_deleteImage",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/delete-image",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/get-images": {
+      "post": {
+        "operationId": "SkuController_getImages",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/get-images",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/bulk-insert": {
+      "post": {
+        "operationId": "SkuController_bulkInsert",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/bulk-insert",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/upload-image-from-url": {
+      "post": {
+        "operationId": "SkuController_uploadThroughURL",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/upload-image-from-url",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/select-thumbnail": {
+      "post": {
+        "operationId": "SkuController_selectThumbnail",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/select-thumbnail",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/generate-excel": {
+      "post": {
+        "operationId": "SkuController_generateExcel",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/generate-excel",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExcelTemplateGenerateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/save-excel": {
+      "post": {
+        "operationId": "SkuController_saveExcel",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/save-excel",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExcelTemplateGenerateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/get-bom-products": {
+      "post": {
+        "operationId": "SkuController_getBOMProducts",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/get-bom-products",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/get-product": {
+      "post": {
+        "operationId": "SkuController_getProduct",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/get-product",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/save-as-draft": {
+      "post": {
+        "operationId": "SkuController_saveAsDraft",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/save-as-draft",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/save-variant-data": {
+      "post": {
+        "operationId": "SkuController_saveVariantData",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/save-variant-data",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/get-variant-dependent-data": {
+      "post": {
+        "operationId": "SkuController_getVariantDependentData",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/get-variant-dependent-data",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/save-variant-dependent-data": {
+      "post": {
+        "operationId": "SkuController_saveVariantDependentData",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/save-variant-dependent-data",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/get-refrence-attributes": {
+      "post": {
+        "operationId": "SkuController_getrefrenceAttributes",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/get-refrence-attributes",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/get-refrence-values": {
+      "post": {
+        "operationId": "SkuController_getRefrenceValues",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/get-refrence-values",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [
+          {
+            "name": "page",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "limit",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "required": false,
+            "name": "workflowRoleId",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "classification",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": [
+                "Normal",
+                "Style",
+                "BOM"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "array"
+            }
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "brand",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dateFrom",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "format": "date-time",
+              "type": "string"
+            }
+          },
+          {
+            "name": "dateTo",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "format": "date-time",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/get-all-draft": {
+      "post": {
+        "operationId": "SkuController_getAllDraft",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/get-all-draft",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DRARequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/get-all-approved": {
+      "post": {
+        "operationId": "SkuController_getAllApproved",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/get-all-approved",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DRARequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/get-all-sent-for-approval": {
+      "post": {
+        "operationId": "SkuController_getAllSentForApproval",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/get-all-sent-for-approval",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InApprovalProductRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllSentForApprovalProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/get-all-rejected": {
+      "post": {
+        "operationId": "SkuController_getAllRejected",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/get-all-rejected",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DRARequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllRejectedProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/get-all-ready-to-publish": {
+      "post": {
+        "operationId": "SkuController_getAllReadyToPublish",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/get-all-ready-to-publish",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DRARequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllRejectedProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/get-all": {
+      "post": {
+        "operationId": "SkuController_getAllSku",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/get-all",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AllProductRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/get-all-approval-pending": {
+      "post": {
+        "operationId": "SkuController_getAllApprovalPending",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/get-all-approval-pending",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InApprovalProductRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllProductsResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/product/delete-product": {
+      "post": {
+        "operationId": "SkuController_deleteProduct",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "POST",
+          "uri": "https://${stageVariables.baseEndpointUri}/api/pdatg/v1/product/delete-product",
+          "responses": {
+            "default": {
+              "statusCode": "201"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "product"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pdatg/v1/health": {
+      "get": {
+        "operationId": "HealthController_check",
+        "x-amazon-apigateway-integration": {
+          "connectionId": "${stageVariables.vpcLinkId}",
+          "httpMethod": "GET",
+          "uri": "https://dev-api.vinreco.in",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK",
+          "type": "http_proxy"
+        },
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthCheckResponseDto"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The Health Check is not successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "info": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      },
+                      "nullable": true
+                    },
+                    "error": {
+                      "type": "object",
+                      "example": {
+                        "redis": {
+                          "status": "down",
+                          "message": "Could not connect"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      },
+                      "nullable": true
+                    },
+                    "details": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        },
+                        "redis": {
+                          "status": "down",
+                          "message": "Could not connect"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "health"
+        ]
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "tags": [
+          "CORS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "info": {
+    "title": "dev-vin2-apigateway",
+    "description": "",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "CreateProductRequest": {
+        "type": "object",
+        "properties": {}
+      },
+      "AttributeWithValue": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "attributeName": {
+            "type": "string"
+          },
+          "attributeDbName": {
+            "type": "string"
+          },
+          "shortName": {
+            "type": "string"
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "labelDescription": {
+            "type": "string"
+          },
+          "attributeType": {
+            "type": "string",
+            "enum": [
+              "textBox",
+              "textArea",
+              "numeric",
+              "singleSelect",
+              "multiSelect",
+              "richText",
+              "date",
+              "time",
+              "dropdown",
+              "url",
+              "numberSlider",
+              "Range"
+            ]
+          },
+          "attributeDataType": {
+            "type": "string",
+            "enum": [
+              "varchar",
+              "int",
+              "float",
+              "date",
+              "time",
+              "datetime",
+              "boolean"
+            ]
+          },
+          "length": {
+            "type": "string"
+          },
+          "mandatory": {
+            "type": "boolean"
+          },
+          "editable": {
+            "type": "boolean"
+          },
+          "visibility": {
+            "type": "boolean"
+          },
+          "searchable": {
+            "type": "boolean"
+          },
+          "constraint": {
+            "type": "boolean"
+          },
+          "referenceMasterId": {
+            "type": "number"
+          },
+          "masterId": {
+            "type": "number"
+          },
+          "attributeGroupId": {
+            "type": "number"
+          },
+          "referenceAttributeId": {
+            "type": "number"
+          },
+          "status": {
+            "type": "boolean"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "value": {
+            "type": "object"
+          },
+          "valueEditable": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "attributeName",
+          "attributeDbName",
+          "shortName",
+          "displayName",
+          "labelDescription",
+          "attributeType",
+          "attributeDataType",
+          "length",
+          "mandatory",
+          "editable",
+          "visibility",
+          "searchable",
+          "constraint",
+          "referenceMasterId",
+          "masterId",
+          "attributeGroupId",
+          "referenceAttributeId",
+          "status",
+          "createdAt",
+          "updatedAt",
+          "value",
+          "valueEditable"
+        ]
+      },
+      "AttributeGroupWithValue": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "attributeGroupName": {
+            "type": "string"
+          },
+          "status": {
+            "type": "boolean"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "attributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AttributeWithValue"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "attributeGroupName",
+          "status",
+          "createdAt",
+          "updatedAt",
+          "attributes"
+        ]
+      },
+      "ProductInfo": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AttributeGroupWithValue"
+            }
+          }
+        },
+        "required": [
+          "product"
+        ]
+      },
+      "GetAllProducts": {
+        "type": "object",
+        "properties": {
+          "categoryId": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "processingStatus": {
+            "type": "string"
+          },
+          "completionPercentage": {
+            "type": "number"
+          },
+          "displayColumns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "productData": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductInfo"
+            }
+          }
+        },
+        "required": [
+          "categoryId",
+          "category",
+          "processingStatus",
+          "completionPercentage",
+          "displayColumns",
+          "productData"
+        ]
+      },
+      "GetAllProductsResponseDto": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "statusCode": {
+            "type": "number"
+          },
+          "message": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/GetAllProducts"
+          }
+        },
+        "required": [
+          "status",
+          "statusCode",
+          "message",
+          "data"
+        ]
+      },
+      "ExcelTemplateGenerateRequest": {
+        "type": "object",
+        "properties": {}
+      },
+      "DRARequest": {
+        "type": "object",
+        "properties": {}
+      },
+      "InApprovalProductRequest": {
+        "type": "object",
+        "properties": {}
+      },
+      "GetAllSentForApprovalProducts": {
+        "type": "object",
+        "properties": {
+          "categoryId": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "reviewRole": {
+            "type": "string"
+          },
+          "reviewers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "completionPercentage": {
+            "type": "number"
+          },
+          "displayColumns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "productData": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductInfo"
+            }
+          }
+        },
+        "required": [
+          "categoryId",
+          "category",
+          "reviewRole",
+          "reviewers",
+          "completionPercentage",
+          "displayColumns",
+          "productData"
+        ]
+      },
+      "GetAllSentForApprovalProductsResponseDto": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "statusCode": {
+            "type": "number"
+          },
+          "message": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/GetAllSentForApprovalProducts"
+          }
+        },
+        "required": [
+          "status",
+          "statusCode",
+          "message",
+          "data"
+        ]
+      },
+      "GetAllRejectedProducts": {
+        "type": "object",
+        "properties": {
+          "categoryId": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "rejectedByRole": {
+            "type": "string"
+          },
+          "rejectedBy": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "comment": {
+            "type": "string"
+          },
+          "completionPercentage": {
+            "type": "number"
+          },
+          "displayColumns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "productData": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductInfo"
+            }
+          }
+        },
+        "required": [
+          "categoryId",
+          "category",
+          "rejectedByRole",
+          "rejectedBy",
+          "comment",
+          "completionPercentage",
+          "displayColumns",
+          "productData"
+        ]
+      },
+      "GetAllRejectedProductsResponseDto": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "statusCode": {
+            "type": "number"
+          },
+          "message": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/GetAllRejectedProducts"
+          }
+        },
+        "required": [
+          "status",
+          "statusCode",
+          "message",
+          "data"
+        ]
+      },
+      "AllProductRequest": {
+        "type": "object",
+        "properties": {}
+      },
+      "DefaultResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "statusCode": {
+            "type": "number"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "statusCode",
+          "message"
+        ]
+      },
+      "HealthCheckResponseDto": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "info": {
+            "type": "object"
+          },
+          "error": {
+            "type": "object"
+          },
+          "details": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "status",
+          "info",
+          "error",
+          "details"
+        ]
+      }
+    }
+  }
+}
